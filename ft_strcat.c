@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/04 16:11:48 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 00:28:47 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 03:55:21 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	while (*s1)
-		s1++;
-	while (*s2)
+	char	*dst;
+	char	*src;
+
+	dst = s1;
+	src = (char *)s2;
+	while (*dst)
+		dst++;
+	while (*src)
 	{
-		*s1 = *s2;
-		s1++;
-		s2++;
+		*dst = *src;
+		dst++;
+		src++;
 	}
-	return s1;
+	*dst = '\0';
+	return (s1);
 }
