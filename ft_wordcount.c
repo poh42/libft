@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 04:43:02 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 06:09:09 by poh              ###   ########.fr       */
+/*   Created: 2018/12/15 07:49:06 by poh               #+#    #+#             */
+/*   Updated: 2018/12/15 07:53:57 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int		ft_wordcount(char const *s, char c)
 {
-	if (ft_isascii(c))
-		write(1, &c, 1);
-	else
-		return ;
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && (s[i] != c))
+			i++;
+	}
+	return (count);
 }

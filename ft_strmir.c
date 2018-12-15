@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strmir.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 04:43:02 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 06:09:09 by poh              ###   ########.fr       */
+/*   Created: 2018/12/15 08:01:50 by poh               #+#    #+#             */
+/*   Updated: 2018/12/15 08:42:25 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_strmir(char *s)
 {
-	if (ft_isascii(c))
-		write(1, &c, 1);
-	else
-		return ;
+	char	c;
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	end = ft_strlen(s);
+	while (start < end)
+	{
+		c = *(s + start);
+		*(s + start) = *(s + end);
+		*(s + end) = c;
+		start++;
+		end--;
+	}
 }

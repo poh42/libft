@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 02:41:23 by poh               #+#    #+#             */
-/*   Updated: 2018/12/13 21:03:54 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 07:57:55 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,30 @@ static int	countit(char const *s, char c)
 	}
 	return (count);
 }
+
 static char	*ft_strndup(const char *s, size_t n)
 {
-	char	*str;
+	char	*p;
 
-	str = (char *)malloc(sizeof(char) * n + 1);
-	if (str == NULL)
+	p = (char *)malloc(sizeof(char) * n + 1);
+	if (p == NULL)
 		return (NULL);
-	str = ft_strncpy(str, s, n);
-	str[n] = '\0';
-	return (str);
+	p = ft_strncpy(p, s, n);
+	p[n] = '\0';
+	return (p);
 }
-char	**ft_strsplit(char const *s, char c)
+
+char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		j;
 	int		k;
-	char	**tab;
+	char	**sp;
 
 	i = 0;
 	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (countit(s, c)) + 1);
-	if (tab == NULL)
+	sp = (char **)malloc(sizeof(char *) * (countit(s, c)) + 1);
+	if (sp == NULL)
 		return (NULL);
 	while (s[i])
 	{
@@ -62,10 +64,10 @@ char	**ft_strsplit(char const *s, char c)
 			i++;
 		if (i > j)
 		{
-			tab[k] = ft_strndup(s + j, i - j);
+			sp[k] = ft_strndup(s + j, i - j);
 			k++;
 		}
 	}
-	tab[k] = NULL;
-	return (tab);
+	sp[k] = NULL;
+	return (sp);
 }

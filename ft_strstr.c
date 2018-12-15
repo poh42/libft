@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 21:00:59 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 03:27:11 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 04:29:22 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strstr(const char *whole, const char *part)
 	j = 0;
 	if (!part[j])
 		return ((char*)whole);
-	while(whole[i])
+	while (whole[i])
 	{
 		while (whole[i + j] == part[j])
 		{

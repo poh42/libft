@@ -6,7 +6,7 @@
 #    By: poh <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/16 01:45:30 by poh               #+#    #+#              #
-#    Updated: 2018/12/13 04:08:13 by poh              ###   ########.fr        #
+#    Updated: 2018/12/15 08:32:16 by poh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,10 @@ SRC = ft_atoi.c \
 	  ft_lstiter.c \
 	  ft_lstnew.c \
 	  ft_lstmap.c \
+	  ft_capslock.c \
+	  ft_decap.c \
+	  ft_strmir.c \
+	  ft_wordcount.c \
 
 
 OBJ = $(SRC:.c=.o)

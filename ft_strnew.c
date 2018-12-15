@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 19:50:18 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 01:28:00 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 06:02:12 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*p;
-	size_t	i;
-	
-	i = 0;
-	if(!(p = (char*)malloc(size)))
-		return (NULL);
-	while (size >= i)
-	{
-		p[i] = '\0';
-		i++;
-	}
-	return (p);
+	return ((char *)ft_memalloc(size + 1));
 }

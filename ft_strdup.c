@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/04 22:18:08 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 03:17:59 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 05:39:49 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*str;
+	char		*str;
+	int			n;
 
-	str = (char*)malloc(sizeof(char) * (strlen(s1) + 1));
+	n = ft_strlen(s1);
+	if (!(str = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
 	while (*s1)
-	{
-		*str = *s1;
-		s1++;
-		str++;
-	}
-	*str = *s1; //gives the last space the nulterminator
-	return str;
+		*str++ = *s1++;
+	*str = '\0';
+	str -= n;
+	return (str);
 }

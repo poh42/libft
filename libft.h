@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 03:52:25 by poh               #+#    #+#             */
-/*   Updated: 2018/12/13 03:54:26 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 08:34:54 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,9 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+char				*ft_capslock(char *c);
+char				*ft_decap(char *c);
+void				ft_strmir(char *s);
+int					ft_wordcount(char const *s, char c);
 
 #endif

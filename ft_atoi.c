@@ -6,34 +6,45 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 21:06:11 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 03:53:29 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 05:50:59 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int	ft_isspace(int c)
 {
-	long			res;
-	long			sign;
-	unsigned int	i;
+	if (c == '\n' || c == '\t' || c == '\f' || c == '\r' \
+			|| c == '\v' || c == ' ')
+		return (1);
+	return (0);
+}
 
-	res = 0;
+int			ft_atoi(const char *str)
+{
+	int					sign;
+	unsigned long long	res;
+
 	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	res = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -1;
-		i++;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str && ft_isdigit(*str))
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		res = res * 10 + *str - '0';
+		if (res >= 9223372036854775807)
+		{
+			if (sign == -1)
+				return (0);
+			return (-1);
+		}
+		str++;
 	}
-	return ((int)(res * sign));
+	return ((int)sign * res);
 }

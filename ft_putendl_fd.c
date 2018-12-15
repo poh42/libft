@@ -6,7 +6,7 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:04:11 by poh               #+#    #+#             */
-/*   Updated: 2018/12/13 20:11:33 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 06:24:13 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	write( fd, s, sizeof(s));
-	ft_putchar_fd( '\n', fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

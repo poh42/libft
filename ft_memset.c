@@ -6,13 +6,13 @@
 /*   By: poh <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/05 16:34:25 by poh               #+#    #+#             */
-/*   Updated: 2018/12/15 03:12:07 by poh              ###   ########.fr       */
+/*   Updated: 2018/12/15 04:59:53 by poh              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*p;
 
